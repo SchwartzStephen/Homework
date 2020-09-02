@@ -11,73 +11,54 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## 2(a)
 
-```{r a.0 }
+```{r}
 #2x + 5y = 33
 #x + 3y = 19
 ```
 
-```{r a.1}
-#x = 19 - 3y
-
-#2(19 - 3y) + 5y = 33
+```{r}
+coef <- c(2,1,5,3)
+A = matrix(coef, nrow=2)
+A
+```
+```{r}
+values <- c(33,19)
+B = matrix(values)
+B
 ```
 
-```{r a.2}
-#38 - 6y + 5y = 33
-#38 - 33 = 6y - 5y
-#5 = y
+```{r}
+var <- c('x','y')
+X = matrix(var)
+X
 ```
-
-```{r a.3}
-#x + (3 * 5) = 19
-#x + 15 = 19
-#x = 19 - 15
-#x = 4
+```{r}
+solve(A,B)
 ```
-
 ## **x = 4  y = 5**
 
 ## 2(b)
 ```{r b, echo=TRUE}
 Vector <- c(1:100)
-sum(Vector)
-length(Vector)
-sum(Vector) / length(Vector)
+Vector
 ```
-
+```{r}
+s <- sum(Vector)
+s
+```
+```{r}
+l<- length(Vector)
+l
+```
+```{r}
+s/l
+```
 ## Average of a Vector from 1 to 100 is **50.5**
 
 ## 2(c)
 ```{r Install Package "dplyr}
 
-#install.packages("dplyr")
-#Installing package into ‘C:/Users/ss136/Documents/R/win-library/4.0’
-#(as ‘lib’ is unspecified)
-#also installing the dependencies ‘purrr’, ‘generics’, ‘tidyselect’
-
-#trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/purrr_0.3.4.zip'
-#Content type 'application/zip' length 428082 bytes (418 KB)
-#downloaded 418 KB
-
-#trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/generics_0.0.2.zip'
-#Content type 'application/zip' length 64333 bytes (62 KB)
-#downloaded 62 KB
-
-#trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/tidyselect_1.1.0.zip'
-#Content type 'application/zip' length 203330 bytes (198 KB)
-#downloaded 198 KB
-
-#trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.0/dplyr_1.0.2.zip'
-#Content type 'application/zip' length 1308189 bytes (1.2 MB)
-#downloaded 1.2 MB
-
-#package ‘purrr’ successfully unpacked and MD5 sums checked
-#package ‘generics’ successfully unpacked and MD5 sums checked
-#package ‘tidyselect’ successfully unpacked and MD5 sums checked
-#package ‘dplyr’ successfully unpacked and MD5 sums checked
-
-#The downloaded binary packages are in
-#	C:\Users\ss136\AppData\Local\Temp\RtmpgtCIH6\downloaded_packages
+install.packages("dplyr")
 ```
 
 ## 3
@@ -86,7 +67,10 @@ C1 <- c('A', 'D')
 C2 <- c('B', 'E')
 C3 <- c('C', 'F')
 C4 <- c('D', 'G')
-data.frame(C1, C2, C3, C4)
+dataframe <- data.frame(C1, C2, C3, C4)
+dataframe
+
+```
 
 
 
