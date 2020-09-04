@@ -63,11 +63,11 @@ install.packages("dplyr")
 
 ## 3
 ```{r}
-C1 <- c('A', 'D')
-C2 <- c('B', 'E')
-C3 <- c('C', 'F')
-C4 <- c('D', 'G')
-dataframe <- data.frame(C1, C2, C3, C4)
+dataframe <- data.frame(
+  C1 = c("A", "D"),
+  C2 = c("B", "E"),
+  C3 = c("C", "F"),
+  C4 = c("D", "G")
+)
 dataframe
-
 ```
