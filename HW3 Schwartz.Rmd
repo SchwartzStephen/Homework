@@ -1,0 +1,55 @@
+---
+title: "Trial Function"
+author: "Stephen Schwartz"
+date: "9/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1. Write a function to calculate the mean:
+```{r}
+HW3_mean <- function(datainput){
+  finaloutput <- (sum(datainput) / length(datainput))
+  return(finaloutput)
+}
+```
+
+#Download this data set and use it for questions 2-4:
+```{r}
+install.packages("tidytuesdayR")
+
+key_crop_yields <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv')
+
+```
+
+
+## 2. The range (first and last) of the variable Year.
+```{r}
+myrange <- range(key_crop_yields$Year, na.rm = TRUE)
+myrange
+```
+
+
+## 3. Using the function from !3, calculate the mean of the variable "Maize (tonnes per hectare)".
+```{r}
+CornYieldnew <- key_crop_yields$`Maize (tonnes per hectare)`
+
+CornYieldnarm <- CornYieldnew[!is.na(CornYieldnew)]
+
+Cornmean <- HW3_mean(CornYieldnarm)
+Cornmean
+```
+
+
+## 4. Save a file with the variable named "Entity"
+```{r}
+Entity <- key_crop_yields$Entity
+write.table(Entity, file = "Entity.txt", sep = ",")
+```
+
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
