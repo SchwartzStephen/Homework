@@ -47,7 +47,7 @@ Cornmean
 ## 4. Save a file with the variable named "Entity"
 ```{r}
 Entity <- key_crop_yields$Entity
-write.table(Entity, file = "Entity.txt", sep = ",")
+write.table(Entity, file = "Entity.csv", sep = ",")
 ```
 
 
